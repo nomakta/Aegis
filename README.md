@@ -18,7 +18,7 @@
 - **Auto-Launch on Startup**:  
    Automatically starts the software on system boot for ease of use and consistent protection.  
 
-## Screenshotsf
+## Screenshots
 ![afbeelding](https://github.com/user-attachments/assets/c4b8d87f-9ab9-4b5c-ac07-24b61d2d6f8c)
 
 ![afbeelding](https://github.com/user-attachments/assets/5f54b22b-df17-4e9e-b136-79e9fe3c85af)
