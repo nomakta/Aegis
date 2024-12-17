@@ -137,8 +137,7 @@ namespace Aegis
             string logMessage = $"{now}: [Event: {eventType}] [Device: {deviceName}]";
             eventsLB.Items.Add(logMessage);
         }
-
-        private void logEvent(string eventType, string message)
+        public void logEvent(string eventType, string message)
         {
             string now = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
             string logMessage = $"{now}: [Event: {eventType}] [Message: {message}]";
@@ -260,7 +259,8 @@ namespace Aegis
             shutdownUserLbl.Text = "Yes";
             this.Icon = Resource1.secure;
             systemTrayNI.Icon = Resource1.secure;
-            logEvent("Guard started", "Guard started");
+            systemTrayNI.ShowBalloonTip(1000, "Guard started", "Listening for USB port changes.", ToolTipIcon.Info);
+            logEvent("Guard started", "");
             startGuardBtn.Enabled = false;
             stopGuardBtn.Enabled = true;
             canShutdown = true;
@@ -269,10 +269,10 @@ namespace Aegis
         private void stopGuard()
         {
             shutdownUserLbl.Text = "No";
-            // change icon
+            systemTrayNI.ShowBalloonTip(1000, "Guard stopped", "Stopped listening for USB port changes.", ToolTipIcon.Info);
             this.Icon = Resource1.unsecure;
             systemTrayNI.Icon = Resource1.unsecure;
-            logEvent("Guard stopped", "Guard stopped");
+            logEvent("Guard stopped", "");
             startGuardBtn.Enabled = true;
             stopGuardBtn.Enabled = false;
             canShutdown = false;

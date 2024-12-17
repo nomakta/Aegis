@@ -25,6 +25,7 @@ namespace Aegis
 
         private void startTestModeBtn_Click(object sender, EventArgs e)
         {
+            mainForm.logEvent("Test mode started", "");
             mainForm.SetTestMode(true);
             startTestModeBtn.Enabled = false;
             stopTestModeBtn.Enabled = true;
@@ -32,6 +33,7 @@ namespace Aegis
 
         private void stopTestModeBtn_Click(object sender, EventArgs e)
         {
+            mainForm.logEvent("Test mode stopped", "");
             mainForm.SetTestMode(false);
             startTestModeBtn.Enabled = true;
             stopTestModeBtn.Enabled = false;
